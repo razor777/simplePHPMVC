@@ -28,7 +28,7 @@
   `empctc` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `emptip` char(3) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`empresaId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 
     */
@@ -53,7 +53,7 @@
 
     function insertarEmpresa($Empresa){
       if($Empresa && is_array($Empresa)){
-         if(!isset($Empresa["empusring"]))$Empresa["empusring"]="Sistemas";
+
          $sqlInsert = "INSERT INTO `empresa` (`empdsc`, `emprtn`, `empdir`, `emptel`, `emptel2`, `empurl`, `empfching`, `empusring`, `empest`, `empctc`, `emptip`) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', now(), '%s', '%s', '%s', '%s');";
          $sqlInsert = sprintf($sqlInsert,
                         $Empresa["empdsc"],
